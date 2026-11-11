@@ -1,0 +1,150 @@
+/* Every colour, size and font comes from CSS variables, so each site can restyle the panel. */
+.consent {
+  --consent-background: Canvas;
+  --consent-foreground: CanvasText;
+  --consent-muted: color-mix(in srgb, var(--consent-foreground) 65%, transparent);
+  --consent-line: color-mix(in srgb, var(--consent-foreground) 16%, transparent);
+  --consent-radius: 4px;
+  position: fixed;
+  z-index: 60;
+  left: 16px;
+  bottom: 16px;
+  width: min(410px, calc(100vw - 32px));
+  padding: 20px 20px 18px;
+  border: 1px solid var(--consent-line);
+  border-radius: var(--consent-radius);
+  background: color-mix(in srgb, var(--consent-background) 88%, transparent);
+  color: var(--consent-foreground);
+  font-family: var(--consent-font, inherit);
+  backdrop-filter: blur(18px) saturate(1.5);
+  box-shadow: 0 30px 80px -20px color-mix(in srgb, var(--consent-background) 95%, transparent);
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header h2 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+.text {
+  margin: 12px 0 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--consent-muted);
+}
+.categories {
+  margin: 12px 0 14px;
+  border-top: 1px dashed var(--consent-line);
+}
+.category {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px dashed var(--consent-line);
+  cursor: pointer;
+}
+.categoryCopy {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+}
+.categoryCopy b {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.categoryCopy span {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--consent-muted);
+}
+.always {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--consent-muted);
+}
+.switch {
+  appearance: none;
+  flex: none;
+  position: relative;
+  width: 34px;
+  height: 20px;
+  margin: 0;
+  border-radius: 99px;
+  border: 1px solid var(--consent-line);
+  background: color-mix(in srgb, var(--consent-foreground) 8%, transparent);
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--consent-muted);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s;
+}
+.switch:checked {
+  background: var(--consent-foreground);
+  border-color: var(--consent-foreground);
+}
+.switch:checked::after {
+  transform: translateX(14px);
+  background: var(--consent-background);
+}
+.switch:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.actions button {
+  flex: 1;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 99px;
+  border: 1px solid var(--consent-line);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.actions button:hover {
+  background: color-mix(in srgb, var(--consent-foreground) 7%, transparent);
+}
+.actions .primary {
+  background: var(--consent-foreground);
+  border-color: var(--consent-foreground);
+  color: var(--consent-background);
+}
+.actions .primary:hover {
+  background: color-mix(in srgb, var(--consent-foreground) 85%, transparent);
+}
+.actions .quiet {
+  flex: 0 0 auto;
+  border-color: transparent;
+  color: var(--consent-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
