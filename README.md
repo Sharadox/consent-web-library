@@ -62,6 +62,6 @@ addEventListener(CONSENT_CHANGE_EVENT, () => {
 
 `pnpm verify` runs formatting, lint, type-check, tests with 100% coverage and the build. Branches follow `<feature>.development` → `development` → `index`, and releases are `v<version>` tags on `index`.
 
-## Licence
+## License
 
 Licença Sharadox de Código Aberto, versão 0.1.0. See [português](LICENCA.md) (the binding text) and the [English translation](LICENSE.md).
