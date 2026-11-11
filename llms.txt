@@ -6,4 +6,4 @@
 - /consent: readConsent(config) → { kind: unknown|declined|decided, record? }, saveConsent(config, granted), declineConsent(config), hasConsent(config, key), openConsent(), requiredOnly(config), everything(config), CONSENT_CHANGE_EVENT, CONSENT_OPEN_EVENT
 - /use-consent: useConsent(config) → { status (undefined before hydration), acceptAll, deny, save(granted) }
 - /consent-panel: <ConsentPanel configuration copy={ title, text, acceptAll, deny, customize, save, back, close, alwaysOn, categories: { key: { title, text } } } className icon decoration />; CSS vars --consent-background/-foreground/-muted/-line/-radius/-font
-- Peer: react. Licence: Sharadox Open Source Licence 0.1.0
+- Peer: react. License: Sharadox Open Source License 0.1.0
