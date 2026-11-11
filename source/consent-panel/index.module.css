@@ -1,4 +1,4 @@
-/* Every colour, size and font comes from CSS variables, so each site can restyle the panel. */
+/* Every color, size and font comes from CSS variables, so each site can restyle the panel. */
 .consent {
   --consent-background: Canvas;
   --consent-foreground: CanvasText;
