@@ -56,7 +56,7 @@ addEventListener(CONSENT_CHANGE_EVENT, () => {
 | `…/use-consent`   | `useConsent(configuration)` → `{ status, acceptAll, deny, save }` (in sync across tabs)                                                                 |
 | `…/consent-panel` | `<ConsentPanel configuration copy className? icon? decoration?>`; `ConsentCopy` in `…/consent-panel/type`                                               |
 
-**Panel CSS variables:** `--consent-background`, `--consent-foreground`, `--consent-muted`, `--consent-line`, `--consent-radius`, `--consent-font`.
+**Panel CSS variables:** `--consent-background`, `--consent-foreground`, `--consent-muted`, `--consent-line`, `--consent-radius`, `--consent-font`, and for the Accept All button `--consent-accent` (a color or a gradient; the foreground color by default) and `--consent-accent-foreground` (its text; the background color by default).
 
 ## Develop
 

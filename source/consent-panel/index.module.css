@@ -133,13 +133,15 @@
 .actions button:hover {
   background: color-mix(in srgb, var(--consent-foreground) 7%, transparent);
 }
+/* The main button: the foreground color, or the site's accent (a color or a gradient) when it sets one. */
 .actions .primary {
-  background: var(--consent-foreground);
-  border-color: var(--consent-foreground);
-  color: var(--consent-background);
+  background: var(--consent-accent, var(--consent-foreground));
+  border-color: transparent;
+  color: var(--consent-accent-foreground, var(--consent-background));
 }
 .actions .primary:hover {
-  background: color-mix(in srgb, var(--consent-foreground) 85%, transparent);
+  background: var(--consent-accent, var(--consent-foreground));
+  opacity: 0.86;
 }
 .actions .quiet {
   flex: 0 0 auto;

@@ -7,3 +7,4 @@
 - /use-consent: useConsent(config) → { status (undefined before hydration), acceptAll, deny, save(granted) }
 - /consent-panel: <ConsentPanel configuration copy={ title, text, acceptAll, deny, customize, save, back, close, alwaysOn, categories: { key: { title, text } } } className icon decoration />; CSS vars --consent-background/-foreground/-muted/-line/-radius/-font
 - Peer: react. License: Sharadox Open Source License 0.1.0
+- Panel CSS variables also include --consent-accent (the Accept All button's background: a color or a gradient; the foreground color by default) and --consent-accent-foreground (its text; the background color by default).
