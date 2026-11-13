@@ -8,6 +8,7 @@ Cookie consent for websites that respects the visitor's answer:
 - **Raising the version** asks everyone again after the categories change.
 - **`hasConsent(…, "analytics")`** tells your code whether it may load a tool.
 - **`openConsent()`** reopens the panel from a "Cookie Preferences" link.
+- **Only required cookies?** The panel just tells: one button (`acknowledge`, such as "Got It", kept for good) and the details (`details`) listing what each category is for. There is nothing to deny.
 
 The panel comes ready made, with Accept All, Deny, Customize, switches and Save Choices. It is animated and styled entirely with CSS variables, and its text comes from props in any language.
 

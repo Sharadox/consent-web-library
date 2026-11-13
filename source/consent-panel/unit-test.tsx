@@ -94,4 +94,32 @@ describe("ConsentPanel", () => {
     await act(async () => openConsent());
     expect((screen.getByRole("switch", { name: /Analytics/ }) as HTMLInputElement).checked).toBe(false);
   });
+  test("with only required categories it has one button, kept for good, and the details", async () => {
+    const configuration: ConsentConfiguration = {
+      storageKey: "consent",
+      version: 1,
+      categories: [{ key: "required", required: true }],
+    };
+    render(
+      <ConsentPanel configuration={configuration} copy={{ ...COPY, acknowledge: "Got It", details: "Details" }} />,
+    );
+    expect(await screen.findByRole("button", { name: "Got It" })).toBeTruthy();
+    expect(screen.queryByRole("button", { name: "Deny" })).toBeNull();
+    button("Details");
+    expect(screen.getByText("Needed.")).toBeTruthy();
+    expect(screen.queryByRole("button", { name: "Save Choices" })).toBeNull();
+    button("Got It");
+    expect(stored()?.granted).toEqual({ required: true });
+  });
+
+  test("with only required categories and no extra copy it falls back to Accept All and Customize", async () => {
+    const configuration: ConsentConfiguration = {
+      storageKey: "consent",
+      version: 1,
+      categories: [{ key: "required", required: true }],
+    };
+    render(<ConsentPanel configuration={configuration} copy={COPY} />);
+    expect(await screen.findByRole("button", { name: "Accept All" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Customize" })).toBeTruthy();
+  });
 });
