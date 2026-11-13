@@ -14,6 +14,10 @@ export interface ConsentCopy {
   back: string;
   /** Close the panel when it was reopened from a "cookie preferences" link. */
   close: string;
+  /** The one button when every category is required ("Got It"); Accept All's text if not given. */
+  acknowledge?: string;
+  /** Opens the categories when every category is required ("Details"); Customize's text if not given. */
+  details?: string;
   /** Label next to required categories' switches. */
   alwaysOn: string;
   /** Title and explanation of each category, by key. */

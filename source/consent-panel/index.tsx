@@ -13,7 +13,8 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 /**
  * The cookie panel. It shows while there is no stored answer: Accept All and Save Choices are kept for good, Deny
  * only for this visit (the visitor is asked again next time), and `openConsent()` reopens it on the manual
- * selection. Styled with CSS variables (`--consent-background`, `--consent-foreground`, `--consent-muted`,
+ * selection. When every category is required there is nothing to choose: the panel only tells, with one button
+ * (`acknowledge`, kept for good) and the details (`details`) showing what each category is for. Styled with CSS variables (`--consent-background`, `--consent-foreground`, `--consent-muted`,
  * `--consent-line`, `--consent-radius`, `--consent-font`), placed by `className`.
  *
  * @example
@@ -24,6 +25,7 @@ export function ConsentPanel({ configuration, copy, className, icon, decoration 
   const [reopened, setReopened] = useState(false);
   const [manual, setManual] = useState(false);
   const [granted, setGranted] = useState<Record<string, boolean>>(() => requiredOnly(configuration));
+  const onlyRequired = configuration.categories.every((category) => category.required === true);
 
   useEffect(() => {
     const open = () => {
@@ -83,9 +85,9 @@ export function ConsentPanel({ configuration, copy, className, icon, decoration 
           )}
           <div className={styles.actions}>
             <button type="button" className={styles.primary} onClick={close(acceptAll)}>
-              {copy.acceptAll}
+              {onlyRequired ? (copy.acknowledge ?? copy.acceptAll) : copy.acceptAll}
             </button>
-            {manual ? (
+            {onlyRequired ? null : manual ? (
               <button type="button" onClick={close(() => save(granted))}>
                 {copy.save}
               </button>
@@ -95,7 +97,13 @@ export function ConsentPanel({ configuration, copy, className, icon, decoration 
               </button>
             )}
             <button type="button" className={styles.quiet} onClick={secondary}>
-              {manual ? (reopened ? copy.close : copy.back) : copy.customize}
+              {manual
+                ? reopened
+                  ? copy.close
+                  : copy.back
+                : onlyRequired
+                  ? (copy.details ?? copy.customize)
+                  : copy.customize}
             </button>
           </div>
         </motion.section>
