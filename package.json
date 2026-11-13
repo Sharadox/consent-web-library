@@ -1,6 +1,6 @@
 {
   "name": "@sharadox/consent-web-library",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Cookie consent for websites: categories and versions, Accept All, Deny for the visit only, manual choices kept, hasConsent and openConsent, and a panel styled with CSS variables.",
   "private": false,
   "license": "SEE LICENSE IN LICENCA.md",
