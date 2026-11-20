@@ -60,6 +60,12 @@ addEventListener(CONSENT_CHANGE_EVENT, () => {
 
 **Panel CSS variables:** `--consent-background`, `--consent-foreground`, `--consent-muted`, `--consent-line`, `--consent-radius`, `--consent-font`, and for the Accept All button `--consent-accent` (a color or a gradient; the foreground color by default) and `--consent-accent-foreground` (its text; the background color by default).
 
+### Also exported
+
+Smaller parts, mostly building blocks of the main exports:
+
+- `…/consent-panel/toggle`: Toggle: one category's on/off switch inside ConsentPanel
+
 ## Develop
 
 `pnpm verify` runs formatting, lint, type-check, tests with 100% coverage and the build. Branches follow `<feature>.development` → `development` → `index`, and releases are `v<version>` tags on `index`.
