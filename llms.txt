@@ -9,6 +9,5 @@
 - /consent-panel: <ConsentPanel configuration copy={ title, text, acceptAll, deny, customize, save, back, close, alwaysOn, categories: { key: { title, text } } } className icon decoration />; CSS vars --consent-background/-foreground/-muted/-line/-radius/-font
 - Peer: react. License: Sharadox Open Source License 0.1.0
 - Panel CSS variables also include --consent-accent (the Accept All button's background: a color or a gradient; the foreground color by default) and --consent-accent-foreground (its text; the background color by default).
-- 0.3.0: every category required → one button (copy.acknowledge, fallback acceptAll) kept for good, no Deny/Save; copy.details (fallback customize) opens the locked list
-- 0.3.1: the panel states its own alignment (header and category rows start on the left, the category text fills its column), so it looks the same on pages whose boxes center by default
 - /consent-panel/toggle: Toggle: one category's on/off switch inside ConsentPanel
+- Changes by version: CHANGELOG.md (in the package)
