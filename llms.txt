@@ -2,6 +2,7 @@
 
 > Cookie consent: Accept All/manual kept (localStorage), Deny only for the visit (sessionStorage), required always on, version bump re-asks; themable panel.
 
+- /consent-copy: consentCopy(content, locale) → ConsentPanel copy from a site's { title, text, categories, labels? } (each { en, pt, … }) and CONSENT_LABELS (shared en/pt buttons: acceptAll, acknowledge, details, deny, customize, save, back, close, alwaysOn, preferences; English for other languages); consentLabel(label, locale, content?) (the footer's "Cookie Preferences" link)
 - Config: { storageKey, version, categories: [{ key, required? }] }
 - /consent: readConsent(config) → { kind: unknown|declined|decided, record? }, saveConsent(config, granted), declineConsent(config), hasConsent(config, key), openConsent(), requiredOnly(config), everything(config), CONSENT_CHANGE_EVENT, CONSENT_OPEN_EVENT
 - /use-consent: useConsent(config) → { status (undefined before hydration), acceptAll, deny, save(granted) }

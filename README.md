@@ -50,12 +50,13 @@ addEventListener(CONSENT_CHANGE_EVENT, () => {
 
 ## API
 
-| Import            | Export                                                                                                                                                  |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `…/consent`       | `readConsent`, `saveConsent`, `declineConsent`, `hasConsent`, `openConsent`, `requiredOnly`, `everything`, `CONSENT_CHANGE_EVENT`, `CONSENT_OPEN_EVENT` |
-| `…/consent/type`  | `ConsentConfiguration`, `ConsentCategory`, `ConsentRecord`, `ConsentStatus`                                                                             |
-| `…/use-consent`   | `useConsent(configuration)` → `{ status, acceptAll, deny, save }` (in sync across tabs)                                                                 |
-| `…/consent-panel` | `<ConsentPanel configuration copy className? icon? decoration?>`; `ConsentCopy` in `…/consent-panel/type`                                               |
+| Import            | Export                                                                                                                                                                                              |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `…/consent-copy`  | `consentCopy(content, locale)`, `consentLabel(label, locale)`, `CONSENT_LABELS`: the panel's text from a site's title, text and categories, with the shared button labels in English and Portuguese |
+| `…/consent`       | `readConsent`, `saveConsent`, `declineConsent`, `hasConsent`, `openConsent`, `requiredOnly`, `everything`, `CONSENT_CHANGE_EVENT`, `CONSENT_OPEN_EVENT`                                             |
+| `…/consent/type`  | `ConsentConfiguration`, `ConsentCategory`, `ConsentRecord`, `ConsentStatus`                                                                                                                         |
+| `…/use-consent`   | `useConsent(configuration)` → `{ status, acceptAll, deny, save }` (in sync across tabs)                                                                                                             |
+| `…/consent-panel` | `<ConsentPanel configuration copy className? icon? decoration?>`; `ConsentCopy` in `…/consent-panel/type`                                                                                           |
 
 **Panel CSS variables:** `--consent-background`, `--consent-foreground`, `--consent-muted`, `--consent-line`, `--consent-radius`, `--consent-font`, and for the Accept All button `--consent-accent` (a color or a gradient; the foreground color by default) and `--consent-accent-foreground` (its text; the background color by default).
 
