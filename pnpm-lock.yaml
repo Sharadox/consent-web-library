@@ -31,8 +31,8 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2(typescript@6.0.3)
       '@sharadox/vitest-configuration-web-library':
-        specifier: ^0.1.4
-        version: 0.1.4(@vitest/coverage-v8@5.1.1)(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.1)
+        specifier: 0.2.1-motion.24
+        version: 0.2.1-motion.24(@vitest/coverage-v8@5.1.1)(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.1)
       '@testing-library/dom':
         specifier: ^10.4.2
         version: 10.4.2
@@ -482,8 +482,8 @@ packages:
     peerDependencies:
       typescript: '>=6'
 
-  '@sharadox/vitest-configuration-web-library@0.1.4':
-    resolution: {integrity: sha512-OuGnOgEIZZv4QigOk9Hh+1iIVU+AlVAEWe/KnI9zrDo6e3ekE3JgOyB7GuUTwFO6/GKKKaq6XAdLNE/VBFrsWQ==}
+  '@sharadox/vitest-configuration-web-library@0.2.1-motion.24':
+    resolution: {integrity: sha512-R3hzY9cGgbkLPTH5oQUVLrGtGei9alp1IgVe3rvOUD65RcgPEJ/z023UFMOgzMaSSNIQO+V2bVymzeqqbpL6JQ==}
     engines: {node: '>=26'}
     peerDependencies:
       '@vitest/coverage-v8': '>=5'
@@ -1925,7 +1925,7 @@ snapshots:
     dependencies:
       typescript: 6.0.3
 
-  '@sharadox/vitest-configuration-web-library@0.1.4(@vitest/coverage-v8@5.1.1)(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.1)':
+  '@sharadox/vitest-configuration-web-library@0.2.1-motion.24(@vitest/coverage-v8@5.1.1)(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.1)':
     dependencies:
       '@vitejs/plugin-react': 6.3.0(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2)(yaml@2.9.1))
       '@vitest/coverage-v8': 5.1.1(vitest@5.1.1)
