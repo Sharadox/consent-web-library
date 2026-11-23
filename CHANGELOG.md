@@ -2,6 +2,10 @@
 
 What changed in each version of `@sharadox/consent-web-library`, newest first.
 
+## 0.4.2
+
+Workflows from git-hub-action-library v0.2.2: npm Trusted Publishing only
+
 ## 0.4.1
 
 Uses motion 14 (no change to the animations).
